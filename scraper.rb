@@ -1,20 +1,17 @@
 require 'open-uri'
 require 'nokogiri'
 
-web_data = open("https://kindle.amazon.com/")
+web_data = open('http://sports.yahoo.com/nba/')
 doc = Nokogiri.HTML(web_data)
-Highly_Followed_People, People ,Text=[],[],[]
-$x = []
-$y = []
-people = doc.xpath("//div[@class='name']")
-people.each {|followed| $x << followed.text}
+x = []
+y = []
 
-text = doc.xpath("//div[@class = 'sampleHighlight'] //div")
-text.each {|followed| $y << followed.text.gsub("\n","").gsub(" ","")}
+date = doc.xpath("//dd[@class='state']//em")
+date.each { |followed| x << followed.text }
 
+text = doc.xpath("//li[@class='upcoming nba basketball ']//a[@class='rapidnofollow rapid-noclick-resp']")
+text.each { |followed| y << followed.text }
 
-for i in 0..2
-  Highly_Followed_People << Hash[$x[i],$y[i]]
-end
-Highly_Followed_People.each {|key,value| puts "#{key}" }
-#puts people "\t" text
+Highly_Followed_People = Hash[x.zip(y)]
+
+Highly_Followed_People.each { |key, value| puts "#{key}\t#{value}" }
