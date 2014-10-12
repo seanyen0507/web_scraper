@@ -12,7 +12,8 @@ class Scraper
   time.each { |times| x << times.text }
   team = doc.xpath("//div[@class='team-capsule']//a")
   team.each { |teams| y << teams.text }
-  player = doc.xpath("//div[@style='display: block']//table[@class='game-stat-overview']//tbody//tr//td")
+  player = doc.xpath("//div[@style='display: block']\
+  //table[@class='game-stat-overview']//tbody//tr//td")
   player.each { |p| team_1 << p.text }
 
   for i in 0..(y.size) / 2 - 1
@@ -27,10 +28,10 @@ class Scraper
   schedule_table_upcoming = Hash[x.zip(z)]
   schedule_table_upcoming.each do |key, value|
     puts "#{key}\t#{value}"
-    if w.size >= 5
+    if key.include? "PM" || "AM"
       5.times { puts w.shift }
     else
-      w.size.times { puts w.shift }
+      3.times { puts w.shift }
     end
   end
 end
