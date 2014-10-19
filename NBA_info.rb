@@ -28,14 +28,7 @@ class Scraper
     end
 
     schedule_table_upcoming = Hash[x.zip(z)]
-    schedule_table_upcoming.each do |key, value|
-      puts "#{key}\t#{value}"
-      if key.include? "PM" || "AM"
-        5.times { puts w.shift }
-      else
-        3.times { puts w.shift }
-      end
-    end
+    schedule_table_upcoming
 
   end
 
@@ -43,16 +36,12 @@ class Scraper
     f = []
     data = ["PTS", "REB", "AST", "PIE"]
     web_data_player = 'http://origin.nba.com/playerfile/'
-    web_data_player = web_data_player + name
+    web_data_player += name
     doc1 = Nokogiri.HTML(open(web_data_player))
     profile = doc1.xpath("//div[@class='sponsor-branding']\
     //tr[@class='stats text-shadow']//td")
     profile.each { |profile| f << profile.text }
     player_profile = Hash[data.zip(f)]
-    player_profile.each {
-      |key, value| puts "#{key} : #{value}"
-    }
-
   end
 
 end
