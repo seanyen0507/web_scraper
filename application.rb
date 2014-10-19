@@ -1,4 +1,6 @@
+
 require './NBA_info'
+
 sam = Scraper.new
 puts "Enter 1 to see starting lineup today, enter 2 to see any player's profile you want."
 control = gets.chomp
@@ -24,5 +26,4 @@ elsif control == 2
       3.times { puts w.shift }
     end
   end
-
 end
