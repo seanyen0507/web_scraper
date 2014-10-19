@@ -11,6 +11,9 @@ We used `Nokogiri` to parse HTML on Ruby, then used `XPATH` to find the tag on H
 
 	require 'open-uri'
 	require 'nokogiri'
+Users can enter '1' to see any players' stats in current season they enter.
+</br>
+Users can also enter '2' to see the starting lineup in today's game or see the highest records(PTS, REB, STL) in the final game.
 ##Collaborator
 * [seanyen0507](https://github.com/seanyen0507)
 * [hsuchinwang](https://github.com/hsuchinwang)
