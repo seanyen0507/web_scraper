@@ -3,7 +3,8 @@
 
 ##Choice of website
 </br>
-We choose the NBA sport infomation on <http://scores.espn.go.com/nba/scoreboard> and scrape each game's starting lineup.
+First, we choose the NBA sports infomation on <http://scores.espn.go.com/nba/scoreboard> and scrape each game's starting lineup.
+Second, we use the NBA players website <http://origin.nba.com/players/> to scrape the players' current season stats which user enters.
 ##Structure of our Code
 </br>
 We used `Nokogiri` to parse HTML on Ruby, then used `XPATH` to find the tag on HTML.
