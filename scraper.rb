@@ -5,9 +5,26 @@ require 'nokogiri'
 class Scraper
   web_data = open('http://scores.espn.go.com/nba/scoreboard')
   doc = Nokogiri.HTML(web_data)
-  x, y, z, w = [], [], [], []
+  web_data_player = 'http://origin.nba.com/playerfile/'
+  x, y, z, w ,f = [], [], [], [], []
   team_1 = []
+  data = ["PTS", "REB", "AST", "PIE"]
 
+  puts "Enter 1 to see starting lineup today, enter 2 to see any player's profile you want."
+  control = gets.chomp
+  control = control.to_i
+  if control == 1
+  puts "Which player's profile do you want to search?"
+  name = gets.chomp
+  name.downcase!
+  web_data_player = web_data_player + name
+  doc1 = Nokogiri.HTML(open(web_data_player))
+  profile = doc1.xpath("//div[@class='sponsor-branding']//tr[@class='stats text-shadow']//td")
+  profile.each { |profile| f << profile.text }
+  player_profile = Hash[data.zip(f)]
+  puts player_profile
+
+elsif control == 2
   time = doc.xpath("//div[@class='game-status']//p")
   time.each { |times| x << times.text }
   team = doc.xpath("//div[@class='team-capsule']//a")
@@ -34,4 +51,7 @@ class Scraper
       3.times { puts w.shift }
     end
   end
+else
+  puts "Please enter number 1 or 2"
+end
 end
