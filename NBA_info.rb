@@ -8,7 +8,7 @@ class Scraper
   def game
     x, y, z, w, team_1  = [], [], [], [], []
 
-    doc = Nokogiri.HTML( open('http://scores.espn.go.com/nba/scoreboard') )
+    doc = Nokogiri.HTML(open('http://scores.espn.go.com/nba/scoreboard'))
 
     time = doc.xpath("//div[@class='game-status']//p")
     time.each { |times| x << times.text }
@@ -28,20 +28,21 @@ class Scraper
     end
 
     schedule_table_upcoming = Hash[x.zip(z)]
-    schedule_table_upcoming
+    [schedule_table_upcoming, w]
 
   end
 
   def profile(name)
     f = []
-    data = ["PTS", "REB", "AST", "PIE"]
+    data = %w('PTS' 'REB' 'AST' 'PIE')
     web_data_player = 'http://origin.nba.com/playerfile/'
     web_data_player += name
     doc1 = Nokogiri.HTML(open(web_data_player))
     profile = doc1.xpath("//div[@class='sponsor-branding']\
     //tr[@class='stats text-shadow']//td")
-    profile.each { |profile| f << profile.text }
+    profile.each { |p| f << p.text }
     player_profile = Hash[data.zip(f)]
+    [player_profile, f]
   end
 
 end
