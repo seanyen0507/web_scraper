@@ -4,7 +4,6 @@ require 'nokogiri'
 # this is a class
 class Scraper
 
-
   def game
     x, y, z, w, team_1  = [], [], [], [], []
 
@@ -54,5 +53,4 @@ class Scraper
     }
 
   end
-
 end
