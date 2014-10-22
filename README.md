@@ -1,5 +1,6 @@
 #WebScraper HW
->this assignment scrapes the information and parse HTML directly from websites.To run this project, you should execute the file from the following path '/lib/application.rb' with Ruby.
+>this assignment scrapes the information and parse HTML directly from websites.
+To run this project, you should execute the file from the following path '/lib/application.rb' with Ruby.
 ##Choice of website
 </br>
 First, we choose the NBA sports infomation on <http://scores.espn.go.com/nba/scoreboard> and scrape each game's starting lineup.
