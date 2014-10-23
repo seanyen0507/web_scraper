@@ -1,5 +1,5 @@
 
-require '../lib/NBA_info'
+require '../lib/NBA_info.rb'
 
 sam = Scraper.new
 puts "Enter 1 to see starting lineup today, enter 2 to see any player's profile you want."
