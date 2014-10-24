@@ -6,8 +6,8 @@ rvm:
   - jruby-head
   - jruby-19mode
 matrix:
-  allow_falures:
-    - rvm: jurby-head
-    branches:
-      only:
-        - master
+  allow_failures:
+    - rvm: jruby-head
+branches:
+  only:
+    - master
