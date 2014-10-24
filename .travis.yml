@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - ruby-head
+  - 2.1.0
+  - 1.9.3
+  - jruby-head
+  - jruby-19mode
+matrix:
+  allow_falures:
+    - rvm: jurby-head
+    branches:
+      only:
+        - master
