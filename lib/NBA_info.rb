@@ -1,1 +1,1 @@
-require 'NBA_info/NBA_info_ex.rb'
+require File.expand_path('../NBA_info/NBA_info_ex', __FILE__)
