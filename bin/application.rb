@@ -1,4 +1,3 @@
-
 require '../lib/NBA_info.rb'
 
 sam = Scraper.new
