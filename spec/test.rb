@@ -1,6 +1,5 @@
 require 'minitest/autorun'
 require 'minitest/rg'
-<<<<<<< HEAD
 require '../lib/NBA_info/NBA_info_ex.rb'
 
 describe 'Do some test' do
