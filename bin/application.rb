@@ -1,8 +1,11 @@
-require '../lib/NBA_info.rb'
+#!/usr/bin/env ruby
+# require '../lib/NBA_info/NBA_info_ex.rb'
+require 'NBA_info'
 
 sam = Scraper.new
 puts "Enter 1 to see starting lineup today, enter 2 to see any player's "\
 'profile you want.'
+
 control = gets.chomp
 control = control.to_i
 
