@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'nokogiri'
-require '../bin/application.rb'
 # this is a class
 class Scraper
 
