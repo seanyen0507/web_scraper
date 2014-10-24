@@ -1,6 +1,6 @@
 #WebScraper HW
 >this assignment scrapes the information and parse HTML directly from websites.
-To run this project, you should execute the file from the following path '/lib/application.rb' with Ruby.
+To run this project, you should install the gem by the command 'gem install NBA_info'. Then you can require the library in ruby.
 ##Choice of website
 </br>
 First, we choose the NBA sports infomation on <http://scores.espn.go.com/nba/scoreboard> and scrape each game's starting lineup.
@@ -11,9 +11,9 @@ We used `Nokogiri` to parse HTML on Ruby, then used `XPATH` to find the tag on H
 
 	require 'open-uri'
 	require 'nokogiri'
-Users can enter '1' to see any players' stats in current season they enter.
+Users can enter '2' to see any players' stats in current season they enter.
 </br>
-Users can also enter '2' to see the starting lineup in today's game or see the highest records(PTS, REB, STL) in the final game.
+Users can also enter '1' to see the starting lineup in today's game or see the highest records(PTS, REB, STL) in the final game.
 ##Collaborator
 * [seanyen0507](https://github.com/seanyen0507)
 * [hsuchinwang](https://github.com/hsuchinwang)

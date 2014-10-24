@@ -26,15 +26,15 @@ class Scraper
     //table[@class='game-stat-overview']//tbody//tr//td")
     player.each { |p| start_line_up << p.text }
 
-    for i in 0..(y.size) / 2 - 1
+    (y.size / 2 - 1).times do |i|
       z << y[i * 2] + ' v.s ' + y[i * 2 + 1]
     end
 
-    for i in 0..(team_1.size) / 2 - 1
+    (team_1.size / 2 - 1).times do |i|
       w << team_1[i * 2] + ' v.s ' + team_1[i * 2 + 1]
     end
 
-    for i in 0..(start_line_up.size) / 5 - 1
+    (start_line_up.size / 5 - 1).times do |i|
       s << start_line_up[i * 5] + "\t" + "#{start_line_up[i * 5 + 1]} "\
       "#{start_line_up[i * 5 + 2]}" + ' v.s '  + "#{start_line_up[i * 5 + 3]} "\
       "#{start_line_up[i * 5 + 4]}"
@@ -49,6 +49,12 @@ class Scraper
     data = %w('PTS' 'REB' 'AST' 'PIE')
     web_data_player = 'http://origin.nba.com/playerfile/'
     web_data_player += name
+    begin
+      open(web_data_player)
+    rescue
+      puts 'Player not found, please input the whole right name.'
+      exit
+    end
     doc1 = Nokogiri.HTML(open(web_data_player))
     profile = doc1.xpath("//div[@class='sponsor-branding']\
     //tr[@class='stats text-shadow']//td")
