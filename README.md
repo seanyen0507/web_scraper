@@ -1,5 +1,5 @@
 #WebScraper HW - NBA_info
->This assignment scrapes the information and parse HTML directly from websites. It can help you to collect the imformation of NBA's games and players.
+>[![Build Status](https://travis-ci.org/seanyen0507/web_scraper.svg?branch=master)](https://travis-ci.org/seanyen0507/web_scraper)<br />This assignment scrapes the information and parse HTML directly from websites. It can help you to collect the imformation of NBA's games and players.
 ##Choice of website
 </br>
 First, we choose the NBA sports infomation on <http://scores.espn.go.com/nba/scoreboard> and scrape each game's starting lineup.
