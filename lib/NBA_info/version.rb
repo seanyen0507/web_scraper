@@ -1,4 +1,4 @@
 module NBA_INFO
-  VERSION = '0.1.4'
-  DATE = '2014-10-24'
+  VERSION = '0.1.6'
+  DATE = '2014-10-26'
 end
