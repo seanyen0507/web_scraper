@@ -26,15 +26,15 @@ class Scraper
     //table[@class='game-stat-overview']//tbody//tr//td")
     player.each { |p| start_line_up << p.text }
 
-    (y.size / 2 - 1).times do |i|
+    (y.size / 2).times do |i|
       z << y[i * 2] + ' v.s ' + y[i * 2 + 1]
     end
 
-    (team_1.size / 2 - 1).times do |i|
+    (team_1.size / 2).times do |i|
       w << team_1[i * 2] + ' v.s ' + team_1[i * 2 + 1]
     end
 
-    (start_line_up.size / 5 - 1).times do |i|
+    (start_line_up.size / 5).times do |i|
       s << start_line_up[i * 5] + "\t" + "#{start_line_up[i * 5 + 1]} "\
       "#{start_line_up[i * 5 + 2]}" + ' v.s '  + "#{start_line_up[i * 5 + 3]} "\
       "#{start_line_up[i * 5 + 4]}"

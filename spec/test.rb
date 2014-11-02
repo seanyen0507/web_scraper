@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/rg'
-require '../lib/NBA_info/NBA_info_ex.rb'
+require './lib/NBA_info/NBA_info_ex.rb'
 
 describe 'Do some test' do
   sam = Scraper.new
