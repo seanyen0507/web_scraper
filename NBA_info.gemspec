@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.executables << 'application.rb'
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'minitest-rg'
+  s.add_runtime_dependency 'nokogiri', '>= 1.6.2' # v.1.6.2 has documented problem
   s.date        =  '2014-10-23'
   s.summary     =  'NBA information extractor and analyzer'
   s.description =  'Extract and analyze NBA information from Yahoo sport and ESPN.com'
