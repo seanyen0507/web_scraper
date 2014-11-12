@@ -15,7 +15,12 @@ if control == 2
   name.downcase!
   name.gsub!(' ', '_')
   sean = sam.profile(name)[0]
-  sean.each { |key, value| puts "#{key} : #{value}" }
+  if sam.profile(name)[2] == false
+    puts 'Player not found, please input the whole right name.'
+    exit
+  else
+    sean.each { |key, value| puts "#{key} : #{value}" }
+  end
 elsif control == 1
   po = sam.game[0]
   w = sam.game[1]

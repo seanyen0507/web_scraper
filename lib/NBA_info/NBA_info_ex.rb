@@ -5,6 +5,7 @@ class Scraper
   def game
     x, y, z, w, team_1, start_line_up, s = [], [], [], [], [], [], []
     count = 1
+    @execute = true
 
     doc = Nokogiri.HTML(open('http://scores.espn.go.com/nba/scoreboard'))
 
@@ -50,16 +51,14 @@ class Scraper
     web_data_player = 'http://origin.nba.com/playerfile/'
     web_data_player += name
     begin
-      open(web_data_player)
+      doc1 = Nokogiri.HTML(open(web_data_player))
     rescue
-      puts 'Player not found, please input the whole right name.'
-      exit
+      @execute = false
     end
-    doc1 = Nokogiri.HTML(open(web_data_player))
     profile = doc1.xpath("//div[@class='sponsor-branding']\
     //tr[@class='stats text-shadow']//td")
     profile.each { |p| f << p.text }
     player_profile = Hash[data.zip(f)]
-    [player_profile, f]
+    [player_profile, f, @execute]
   end
 end
