@@ -61,4 +61,14 @@ class Scraper
     player_profile = Hash[data.zip(f)]
     [player_profile, f, @execute]
   end
+
+  def leader
+    leaders = []
+    doc2 = Nokogiri.HTML(open('http://espn.go.com/nba/statistics'))
+    leaderscore = doc2.xpath("//div[@class='mod-content']//td[@align='right']/text()")
+    leaders << leaderscore[1]
+    leaders << leaderscore[19]
+    leaders << leaderscore[7]
+    leaders
+  end
 end
